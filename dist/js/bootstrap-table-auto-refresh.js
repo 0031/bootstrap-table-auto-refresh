@@ -100,7 +100,7 @@
                         min: 1,        // 最小1秒
                         max: 60 * 60,  // 最大1小时
                         step: 1,       // 1秒递增
-                        initval: $.fn.bootstrapTable.defaults.autoRefreshInterval,
+                        initval: that.options.autoRefreshInterval,
                         buttondown_class: "btn btn-info",
                         buttonup_class: "btn btn-info"
                     });
@@ -108,7 +108,7 @@
                     // 绑定touchspin相关事件
                     // 值发生改变
                     $spin.on('change', function () {
-                        $.fn.bootstrapTable.defaults.autoRefreshInterval = parseInt($(this).val());
+                        that.options.autoRefreshInterval = parseInt($(this).val());
                         // 先刷新一次数据
                         that.refresh();
                         // 开启定时器
@@ -137,10 +137,9 @@
                 // 自动刷新函数
                 var startAutoRefreshInterval = function () {
                     clearAutoRefreshInterval();
-                    console.log($.fn.bootstrapTable.defaults.autoRefreshInterval);
                     autoRefreshInterval = setInterval(function () {
                         that.refresh();
-                    }, $.fn.bootstrapTable.defaults.autoRefreshInterval * 1000);
+                    }, that.options.autoRefreshInterval * 1000);
                 };
 
                 // 下拉菜单自定义导出span点击
