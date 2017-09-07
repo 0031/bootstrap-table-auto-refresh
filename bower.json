@@ -1,0 +1,23 @@
+{
+  "name": "bootstrap-table-auto-refresh",
+  "description": "The bootstrap-table paging plug-in extension automatically refresh the table data.",
+  "main": ["./src/","./dist/"],
+  "authors": [
+    "0031"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "bootstrap-table bootstrap-table-auto-refresh"
+  ],
+  "homepage": "https://github.com/0031/bootstrap-table-auto-refresh#readme",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-table": "wenzhixin/bootstrap-table"
+  }
+}
